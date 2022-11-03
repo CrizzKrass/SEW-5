@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cars CRUD</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <h1>Cars CRUD</h1>
+    <h3>Add</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+        <input type="text" id="hersteller" placeholder="Hersteller">
+        <input type="text" id="typ" placeholder="Typenbezeichnung" />
+        <input type="number" id="preis" placeholder="Preis" />
+        <input type="date" id="service" placeholder="Nächstes Service" />
+        <input type="number" id="leistung" placeholder="Leistung" />
+        <input type="number" id="km" placeholder="kmStand" />
+        <input type="submit" value="Add">
+    </form>
+
+    <div id="editForm">
+        <h3>Edit</h3>
+        <form action="javascript:void(0);" onsubmit="updateItem()">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-hersteller" placeholder="Hersteller">
+            <input type="text" id="edit-typ" placeholder="Typenbezeichnung" />
+            <input type="number" id="edit-preis" placeholder="Preis" />
+            <input type="date" id="edit-service" placeholder="Nächstes Service" />
+            <input type="number" id="edit-leistung" placeholder="Leistung" />
+            <input type="number" id="edit-km" placeholder="kmStand" />
+            <input type="submit" value="Save">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>Hersteller</th>
+            <th>Typ</th>
+            <th>Verkaufspreis</th>
+            <th>Nächstes Service</th>
+            <th>Leistung(KW)</th>
+            <th>kmStand</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tbody id="todos"></tbody>
+    </table>
+
+    <script src="js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getItems();
+    </script>
+</body>
+</html>

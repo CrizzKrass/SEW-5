@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "833b10e2-7082-436f-a77f-5862f16c1165": {
+      "ProjectGuid": "833b10e2-7082-436f-a77f-5862f16c1165",
+      "DisplayName": "CarRestClient",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

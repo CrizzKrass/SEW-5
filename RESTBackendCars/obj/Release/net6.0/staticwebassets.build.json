@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "Hash": "hmCqLn2dpfA9oH4vGRBHrA4nPCOmKXs1GmfJlvH1XGo=",
+  "Source": "RESTBackendCars",
+  "BasePath": "_content/RESTBackendCars",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "RESTBackendCars\\wwwroot",
+      "Source": "RESTBackendCars",
+      "ContentRoot": "C:\\Users\\Crizz\\Documents\\sew\\asp\\Auto\\RESTBackendCars\\wwwroot\\",
+      "BasePath": "_content/RESTBackendCars",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Crizz\\Documents\\sew\\asp\\Auto\\RESTBackendCars\\wwwroot\\css\\site.css",
+      "SourceId": "RESTBackendCars",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Crizz\\Documents\\sew\\asp\\Auto\\RESTBackendCars\\wwwroot\\",
+      "BasePath": "_content/RESTBackendCars",
+      "RelativePath": "css/site.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Crizz\\Documents\\sew\\asp\\Auto\\RESTBackendCars\\wwwroot\\index.html",
+      "SourceId": "RESTBackendCars",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Crizz\\Documents\\sew\\asp\\Auto\\RESTBackendCars\\wwwroot\\",
+      "BasePath": "_content/RESTBackendCars",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\Crizz\\Documents\\sew\\asp\\Auto\\RESTBackendCars\\wwwroot\\js\\site.js",
+      "SourceId": "RESTBackendCars",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Crizz\\Documents\\sew\\asp\\Auto\\RESTBackendCars\\wwwroot\\",
+      "BasePath": "_content/RESTBackendCars",
+      "RelativePath": "js/site.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\site.js"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+﻿<Window x:Class="CarRestClient.View.UpdateView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CarRestClient.View"
+        xmlns:src="clr-namespace:CarRestClient.ViewModel"
+        mc:Ignorable="d"
+        Title="UpdateView" Height="335" Width="210"
+        ResizeMode="NoResize">
+    <Window.DataContext>
+        <src:CarViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+            <TextBlock Text="Hersteller"/>
+            <TextBox Text = "{Binding CarToUpdate.Hersteller, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="200px" Height="25"/>
+            <TextBlock Text="Typ"/>
+            <TextBox Text = "{Binding CarToUpdate.Typenbezeichnung, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="200px" Height="25"/>
+            <TextBlock Text="km"/>
+            <TextBox Text="{Binding CarToUpdate.KmStand, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="200" Height="25"/>
+            <TextBlock Text="PS"/>
+            <TextBox Text="{Binding CarToUpdate.Leistung, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="200" Height="25"/>
+            <TextBlock Text="Verkaufspreis"/>
+            <TextBox Text="{Binding CarToUpdate.Verkaufspreis, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="200" Height="25"/>
+            <TextBlock Text="Nächstes Service"/>
+            <DatePicker SelectedDate="{Binding CarToUpdate.Service, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="200" Height="25" />
+            <StackPanel Orientation="Horizontal">
+                <Button Command="{Binding UpdateCarCommand}" Width="100"  Height="50">Update</Button>
+                <Button Command="{Binding CloseWindowCommand}" Width="100"  Height="50">Cancel</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

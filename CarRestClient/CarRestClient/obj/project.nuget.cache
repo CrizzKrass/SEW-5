@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "4a9yn/jkpPMjP835VMAk4Uw9gwFc2qzgV2J0Axc59uXMphiLbNr5nArEP6Bo7Y1X+LnNgjC75DsZ/FuKOg7crQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Crizz\\source\\repos\\5ahitn\\CarRestClient\\CarRestClient\\CarRestClient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Crizz\\.nuget\\packages\\restsharp\\108.0.2\\restsharp.108.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

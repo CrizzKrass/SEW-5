@@ -75,3 +75,5 @@ C:\Users\Crizz\source\repos\5ahitn\CarRestClient\CarRestClient\obj\Debug\net6.0-
 C:\Users\Crizz\source\repos\5ahitn\CarRestClient\CarRestClient\obj\Debug\net6.0-windows\CarRestClient.genruntimeconfig.cache
 C:\Users\Crizz\source\repos\5ahitn\CarRestClient\CarRestClient\obj\Debug\net6.0-windows\View\AddView.g.cs
 C:\Users\Crizz\source\repos\5ahitn\CarRestClient\CarRestClient\obj\Debug\net6.0-windows\View\AddView.baml
+C:\Users\Crizz\Documents\sew\asp\Auto\CarRestClient\CarRestClient\obj\Debug\net6.0-windows\View\AddView.g.cs
+C:\Users\Crizz\Documents\sew\asp\Auto\CarRestClient\CarRestClient\obj\Debug\net6.0-windows\View\AddView.baml

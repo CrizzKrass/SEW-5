@@ -11,6 +11,8 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 using DataFormat = RestSharp.DataFormat;
 
 namespace CarRestClient.ViewModel
@@ -61,17 +63,16 @@ namespace CarRestClient.ViewModel
         #endregion
         public CarViewModel()
         {
+            Cars = new ObservableCollection<Car>();
+
             try
             {
                 Client = new RestClient(_uri);
-                Cars = new ObservableCollection<Car>();
-
                 GetCars();
             }
             catch (Exception e)
             {
                 MessageBox.Show("konnte keine Verbindung Aufbauen", "keine Verbindung", MessageBoxButton.OK);
-
             }
 
             
@@ -85,7 +86,7 @@ namespace CarRestClient.ViewModel
 
                 DeleteCar(SelectedCar.Id);
                 GetCars();
-            }, c => (Cars.Contains(SelectedCar)));
+            }, c => Cars.Contains(SelectedCar));
             ShowAddWindowCommand = new RelayCommand(e =>
             {
                 AddView view = new AddView();
@@ -103,6 +104,7 @@ namespace CarRestClient.ViewModel
                     Service = InsertCar.Service,
                     Verkaufspreis = InsertCar.Verkaufspreis
                 });
+                InsertCar = new Car();
                 CloseView();
                 GetCars();
             });
@@ -112,7 +114,7 @@ namespace CarRestClient.ViewModel
                 UpdateView view = new UpdateView();
                 view.DataContext = this;
                 view.Show();
-            });
+            }, c => Cars.Contains(SelectedCar));
             CloseWindowCommand = new RelayCommand(e =>
             {
                 CloseView();
@@ -125,7 +127,6 @@ namespace CarRestClient.ViewModel
             });
         }
 
-
         #region Commands
         public RelayCommand DeleteCarCommand { get; }
         public RelayCommand ShowAddWindowCommand { get;}
@@ -136,7 +137,6 @@ namespace CarRestClient.ViewModel
 
         #endregion
         #region Methods
-
         public void CloseView()
         {
             var view = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
@@ -145,6 +145,7 @@ namespace CarRestClient.ViewModel
 
         public async void GetCars()
         {
+            Console.WriteLine("get Cars");
             this.Cars.Clear();
             
             var request = new RestRequest(_api, Method.Get);
@@ -153,8 +154,9 @@ namespace CarRestClient.ViewModel
             if (response.IsSuccessful)
             {
                 response.Data.ForEach(car => this.Cars.Add(car));
+                RaisePropertyChanged(nameof(this.Cars));
             }
-
+            Console.WriteLine("Got Cars");
         }
 
         public async void PostCar(Car car)
@@ -162,12 +164,14 @@ namespace CarRestClient.ViewModel
             var request = new RestRequest(_api, Method.Post);
             request.RequestFormat = DataFormat.Json;
             request.AddBody(car);
-            await Client.ExecuteAsync(request);
+            var res = await Client.ExecuteAsync(request);
+            Console.WriteLine(res.ResponseStatus);
         }
 
         public async void UpdateCar(Car car)
         {
-            var request = new RestRequest($"{_api}{car.Id}", Method.Put);
+            var request = new RestRequest($"{_api}{{id}}", Method.Put);
+            request.AddParameter("id", car.Id, ParameterType.UrlSegment, true);
             request.RequestFormat = DataFormat.Json;
             request.AddBody(car);
             await Client.ExecuteAsync(request);
@@ -175,7 +179,8 @@ namespace CarRestClient.ViewModel
 
         public async void DeleteCar(int id)
         {
-            var request = new RestRequest($"{_api}{id}", Method.Delete);
+            var request = new RestRequest($"{_api}{{id}}", Method.Delete);
+            request.AddParameter("id", id, ParameterType.UrlSegment, false);
             await Client.ExecuteAsync(request);
         }
         #endregion

@@ -145,7 +145,7 @@ namespace CarRestClient.ViewModel
 
         public async void GetCars()
         {
-            Console.WriteLine("get Cars");
+            //Console.WriteLine("get Cars");
             this.Cars.Clear();
             
             var request = new RestRequest(_api, Method.Get);
@@ -156,7 +156,7 @@ namespace CarRestClient.ViewModel
                 response.Data.ForEach(car => this.Cars.Add(car));
                 RaisePropertyChanged(nameof(this.Cars));
             }
-            Console.WriteLine("Got Cars");
+            //Console.WriteLine("Got Cars");
         }
 
         public async void PostCar(Car car)
@@ -165,7 +165,7 @@ namespace CarRestClient.ViewModel
             request.RequestFormat = DataFormat.Json;
             request.AddBody(car);
             var res = await Client.ExecuteAsync(request);
-            Console.WriteLine(res.ResponseStatus);
+            //Console.WriteLine(res.ResponseStatus);
         }
 
         public async void UpdateCar(Car car)

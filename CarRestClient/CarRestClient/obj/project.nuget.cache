@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1UxiU6hkUOXUtBnJlJVhgzxFFg2k/FdJn74QBJu9/m2fc2NisEdZv75tOCiuYaczZmlhMmHxQhj8tILT+q0enQ==",
+  "dgSpecHash": "UeQIesSwSqTwWM01JKYP5/4hph8UGXvYrsUDQkatVk1Ko/IcwyGVpfN/kPFwJODZGH023kvzuAJhOXsTjhS4jw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Crizz\\Documents\\sew\\asp\\Auto\\CarRestClient\\CarRestClient\\CarRestClient.csproj",
+  "projectFilePath": "C:\\Users\\Crizz\\source\\repos\\5ahitn\\SEW-5\\CarRestClient\\CarRestClient\\CarRestClient.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Crizz\\.nuget\\packages\\restsharp\\108.0.2\\restsharp.108.0.2.nupkg.sha512"
   ],

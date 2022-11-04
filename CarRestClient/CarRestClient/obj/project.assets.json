@@ -39,24 +39,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Crizz\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Crizz\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Crizz\\source\\repos\\5ahitn\\SEW-5\\CarRestClient\\CarRestClient\\CarRestClient.csproj",
+      "projectUniqueName": "C:\\Users\\Crizz\\Documents\\sew\\SEW-5\\CarRestClient\\CarRestClient\\CarRestClient.csproj",
       "projectName": "CarRestClient",
-      "projectPath": "C:\\Users\\Crizz\\source\\repos\\5ahitn\\SEW-5\\CarRestClient\\CarRestClient\\CarRestClient.csproj",
+      "projectPath": "C:\\Users\\Crizz\\Documents\\sew\\SEW-5\\CarRestClient\\CarRestClient\\CarRestClient.csproj",
       "packagesPath": "C:\\Users\\Crizz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Crizz\\source\\repos\\5ahitn\\SEW-5\\CarRestClient\\CarRestClient\\obj\\",
+      "outputPath": "C:\\Users\\Crizz\\Documents\\sew\\SEW-5\\CarRestClient\\CarRestClient\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
         "C:\\Users\\Crizz\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -105,7 +100,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

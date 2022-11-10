@@ -4,16 +4,16 @@
 exe
 C#
 .cs
-C:\Users\Crizz\source\repos\5ahitn\SEW-5\CarRestClient\CarRestClient\obj\Debug\net6.0-windows\
+C:\Users\Crizz\Documents\sew\SEW-5\CarRestClient\CarRestClient\obj\Debug\net6.0-windows\
 CarRestClient
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\Crizz\source\repos\5ahitn\SEW-5\CarRestClient\CarRestClient\App.xaml
+C:\Users\Crizz\Documents\sew\SEW-5\CarRestClient\CarRestClient\App.xaml
 3-692018414
 
 8-1133312745
-1951457571370
+195-1972444830
 View\AddView.xaml;View\CarView.xaml;View\UpdateView.xaml;
 
 True

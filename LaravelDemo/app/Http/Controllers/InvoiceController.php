@@ -14,7 +14,9 @@ class InvoiceController extends Controller
      */
     public function index()
     {
-        //
+        $invoices = Invoice::all();
+
+        return view('invoice')->with(['invoices' => $invoices]);
     }
 
     /**
@@ -24,7 +26,7 @@ class InvoiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('invoiceedit');
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Invoice;
+use http\Env\Response;
 use Illuminate\Http\Request;
 
 class InvoiceController extends Controller
@@ -37,7 +38,14 @@ class InvoiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $invoice = new Invoice();
+        $invoice->name = $request->name;
+        $invoice->price_net = $request->pricenet;
+        $invoice->price_gross = $request->pricegross;
+        $invoice->vat = $request->vat;
+        $invoice->save();
+
+        return redirect(route('invoice.index'));
     }
 
     /**
@@ -48,7 +56,7 @@ class InvoiceController extends Controller
      */
     public function show(Invoice $invoice)
     {
-        //
+        return view('invoiceshow')->with(['invoice'=>$invoice]);
     }
 
     /**
@@ -59,7 +67,7 @@ class InvoiceController extends Controller
      */
     public function edit(Invoice $invoice)
     {
-        //
+        return view('invoiceedit')->with(['invoice'=>$invoice]);
     }
 
     /**
@@ -71,7 +79,13 @@ class InvoiceController extends Controller
      */
     public function update(Request $request, Invoice $invoice)
     {
-        //
+        $invoice->name = $request->name;
+        $invoice->price_net = $request->pricenet;
+        $invoice->price_gross = $request->pricegross;
+        $invoice->vat = $request->vat;
+        $invoice->save();
+
+        return redirect(route('invoice.index'));
     }
 
     /**
@@ -82,6 +96,8 @@ class InvoiceController extends Controller
      */
     public function destroy(Invoice $invoice)
     {
-        //
+        $invoice->delete();
+
+        return redirect(route('invoice.index'));
     }
 }

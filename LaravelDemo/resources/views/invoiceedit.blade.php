@@ -3,31 +3,24 @@
     <title>Edit</title>
 </head>
 <body>
-    <form action="{{ route('invoice.store') }}">
+    <form action="{{ isset($invoice) ? route('invoice.update',[$invoice->id]) : route('invoice.store') }}" method="post">
         @csrf
-        <label for="id">Id</label>
-        <input type="text" name="id" readonly />
-        <br />
+        @if(isset($invoice))
+            @method('PUT')
+        @endif
         <label for="name">Name</label>
-        <input type="text" name="name"/>
+        <input type="text" name="name" value="{{ isset($invoice->name) ? $invoice->name : '' }}"/>
         <br />
-        <label for="price_net">Price Net</label>
-        <input type="number" name="price_net"/>
+        <label for="pricenet">Price Net</label>
+        <input type="number" name="pricenet" value = "{{ isset($invoice->price_net) ? $invoice->price_net : '' }}"/>
         <br />
-        <label for="price_gross">Price Gross</label>
-        <input type="number" name="price_gross" readonly />
+        <label for="pricegross">Price Gross</label>
+        <input type="number" name="pricegross" value="{{ isset($invoice->price_gross) ? $invoice->price_gross : '' }}"/>
         <br />
         <label for="vat">Vat</label>
-        <input type="number" name="vat"/>
-        <br />
-        <label for="user_clearing">User Clearing</label>
-        <input type="text" name="user_clearing"/>
-        <br />
-        <label for="clearing_date">Clearing Date</label>
-        <input type="date" name="clearing_date"/>
+        <input type="number" name="vat" value="{{ isset($invoice->vat) ? $invoice->vat : '' }}"/>
         <br />
         <input type="submit" value="Absenden">
-
     </form>
 </body>
 </html>

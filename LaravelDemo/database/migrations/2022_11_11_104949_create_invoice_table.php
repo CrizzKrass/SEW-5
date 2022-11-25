@@ -19,8 +19,8 @@ return new class extends Migration
             $table->double('price_net');
             $table->double('price_gross');
             $table->double('vat');
-            $table->string('user_clearing');
-            $table->dateTime('clearing_date');
+            $table->string('user_clearing')->nullable();
+            $table->dateTime('clearing_date')->nullable();
             $table->timestamps();
         });
     }

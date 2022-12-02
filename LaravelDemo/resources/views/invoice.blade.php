@@ -1,11 +1,7 @@
-<html>
-<head>
-    <title>
-        Invoice
-    </title>
-</head>
-<body>
-    <a href="{{route('invoice.create')}}"><button>Datensatz erstellen</button></a>
+@extends('master')
+@section('title', 'Invoices')
+@section('content')
+<a href="{{route('invoice.create')}}"><button>Datensatz erstellen</button></a>
 <table>
     <tr>
         <th>Id</th>
@@ -24,11 +20,14 @@
             <td>{{$invoice->price_net}}</td>
             <td>{{$invoice->price_gross}}</td>
             <td>{{$invoice->vat}}</td>
-            <td><a href="{{ route('invoice.edit', [$invoice->id]) }}"> Edit </a></td>
-            <td><a href="{{ route('invoice.show', [$invoice->id]) }}"> Details </a></td>
-            <td><a href="{{ route('invoice.destroy', [$invoice->id]) }}"> Delete </a></td>
+            <td><a href="{{ route('invoice.edit', [$invoice->id]) }}"><button>Edit</button></a></td>
+            <td><a href="{{ route('invoice.show', [$invoice->id]) }}"><button>Details</button></a></td>
+            <td><form action="{{route('invoice.destroy',[$invoice->id])}}" method="post">
+                    @method("DELETE")
+                    @csrf
+                    <button type="submit"  onclick="return confirm('Löschen?')">Delete</button>
+                </form></td>
         </tr>
     @endforeach
 </table>
-</body>
-</html>
+@endsection

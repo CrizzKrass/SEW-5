@@ -17,7 +17,7 @@ class InvoiceController extends Controller
     {
         $invoices = Invoice::all();
 
-        return view('invoice')->with(['invoices' => $invoices]);
+        return view('invoice'); //->with(['invoices' => $invoices]); //datatables ohne AJAX
     }
 
     /**
@@ -99,5 +99,9 @@ class InvoiceController extends Controller
         $invoice->delete();
 
         return redirect(route('invoice.index'));
+    }
+
+    public function getInvoiceData(){
+        return datatables()->of(Invoice::all())->make(true);
     }
 }

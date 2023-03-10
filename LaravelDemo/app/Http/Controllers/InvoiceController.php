@@ -98,10 +98,11 @@ class InvoiceController extends Controller
     {
         $invoice->delete();
 
-        return redirect(route('invoice.index'));
+        //return redirect(route('invoice.index'));
     }
 
     public function getInvoiceData(){
+        //return json_encode(array('data' => Invoice::all()));
         return datatables()->of(Invoice::all())->make(true);
     }
 }

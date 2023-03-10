@@ -13,6 +13,9 @@
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.13.1/datatables.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.ui.position.js"></script>
 </head>
 <body>
 	<div id="header">
@@ -38,6 +41,7 @@
 
         //DataTable mit AJAX
 
+
         $.ajaxSetup({
             headers:{
                 'X-CSRF-TOKEN': "{{ csrf_token() }}"
@@ -45,6 +49,7 @@
         });
 
         $(document).ready(function(){
+
             $('#invoice-table').DataTable({
                 "autoWidth": true,
                 "lengthChange":false,
@@ -53,9 +58,15 @@
                     "url": "{{route('api.get-invoice-data')}}",
                     "type": "Get"
                 },
+                createdRow: function (row, data, dataIndex){
+                    $(row).attr('data-id', data.id);
+                },
                 columns: [
                     {
-                        data: "id"
+                        data: "id",
+                        createdCell: function(nTd, cellData, rowData, rowIndex, colIndex){
+                            $(nTd).html(`<a href='invoice/${rowData.id}/edit'>${rowData.id}</a>`);
+                        }
                     },
                     {
                         data: "name"
@@ -68,6 +79,17 @@
                     },
                     {
                         data: "vat"
+                    },
+                    {
+                        data:"user_clearing",
+                        createdCell: function (td, cellData, rowData, row, col)
+                        {
+                            if (rowData.user_clearing == null) {
+                                $(td).css('background-color', 'Red');
+                            }else{
+                                $(td).css('background-color', 'Green');
+                            }
+                        }
                     },
                     {
                         data: "clearing_date",
@@ -104,11 +126,6 @@
                     },
                     {
                         render: function(data,type,row){
-                            return  `<a href='invoice/${row.id}/edit'><button>Edit</button></a>`
-                        }
-                    },
-                    {
-                        render: function(data,type,row){
                             return  `<a href='invoice/${row.id}'><button>Details</button></a>`
                         }
                     },
@@ -125,6 +142,28 @@
             })
 
         })
+
+        $(function() {
+            $.contextMenu({
+                selector: '#invoice-table tr',
+                trigger: 'right',
+                callback: function(key, options) {
+                    if (key === "edit")
+                        window.open(`invoice/${options.$trigger[0].getAttribute('data-id')}/edit`, '_self')
+                    if (key === "new")
+                        window.open(`invoice/create`, '_self');
+                    if(key === "delete")
+                        fetch(`/invoice/${options.$trigger[0].getAttribute('data-id')}`, {
+                            method: 'DELETE'
+                        });
+                },
+                items: {
+                    "edit":{name: "Edit"},
+                    "new": {name: "New"},
+                    "delete": {name: "Delete"},
+                }
+            });
+        });
     </script>
 </body>
 </html>

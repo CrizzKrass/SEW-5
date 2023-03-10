@@ -10,10 +10,10 @@
             <th>Price Net</th>
             <th>Price Gross</th>
             <th>Vat</th>
+            <th>User Clearing</th>
             <th>Clearing Date</th>
             <th>Created at</th>
             <th>Updated at</th>
-            <th></th>
             <th></th>
             <th></th>
         </tr>

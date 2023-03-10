@@ -23,7 +23,7 @@ class InvoiceFactory extends Factory
             'price_net'      => $this->faker->numberBetween(100, 1000),
             'price_gross'    => $this->faker->numberBetween(80, 800),
             'vat'           => $this->faker->numberBetween(10, 20),
-            'user_clearing'  => $this->faker->firstName,
+            'user_clearing'  => null, //$this->faker->firstName,
             'clearing_date'  => now(),
         ];
     }

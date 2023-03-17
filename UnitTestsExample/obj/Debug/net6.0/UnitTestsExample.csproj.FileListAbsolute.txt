@@ -1,0 +1,15 @@
+C:\Users\Crizz\Documents\sew\SEW-5\UnitTestsExample\bin\Debug\net6.0\UnitTestsExample.exe
+C:\Users\Crizz\Documents\sew\SEW-5\UnitTestsExample\bin\Debug\net6.0\UnitTestsExample.deps.json
+C:\Users\Crizz\Documents\sew\SEW-5\UnitTestsExample\bin\Debug\net6.0\UnitTestsExample.runtimeconfig.json
+C:\Users\Crizz\Documents\sew\SEW-5\UnitTestsExample\bin\Debug\net6.0\UnitTestsExample.dll
+C:\Users\Crizz\Documents\sew\SEW-5\UnitTestsExample\bin\Debug\net6.0\UnitTestsExample.pdb
+C:\Users\Crizz\Documents\sew\SEW-5\UnitTestsExample\obj\Debug\net6.0\UnitTestsExample.csproj.AssemblyReference.cache
+C:\Users\Crizz\Documents\sew\SEW-5\UnitTestsExample\obj\Debug\net6.0\UnitTestsExample.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Crizz\Documents\sew\SEW-5\UnitTestsExample\obj\Debug\net6.0\UnitTestsExample.AssemblyInfoInputs.cache
+C:\Users\Crizz\Documents\sew\SEW-5\UnitTestsExample\obj\Debug\net6.0\UnitTestsExample.AssemblyInfo.cs
+C:\Users\Crizz\Documents\sew\SEW-5\UnitTestsExample\obj\Debug\net6.0\UnitTestsExample.csproj.CoreCompileInputs.cache
+C:\Users\Crizz\Documents\sew\SEW-5\UnitTestsExample\obj\Debug\net6.0\UnitTestsExample.dll
+C:\Users\Crizz\Documents\sew\SEW-5\UnitTestsExample\obj\Debug\net6.0\refint\UnitTestsExample.dll
+C:\Users\Crizz\Documents\sew\SEW-5\UnitTestsExample\obj\Debug\net6.0\UnitTestsExample.pdb
+C:\Users\Crizz\Documents\sew\SEW-5\UnitTestsExample\obj\Debug\net6.0\UnitTestsExample.genruntimeconfig.cache
+C:\Users\Crizz\Documents\sew\SEW-5\UnitTestsExample\obj\Debug\net6.0\ref\UnitTestsExample.dll
